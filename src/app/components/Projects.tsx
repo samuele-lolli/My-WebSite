@@ -8,13 +8,16 @@ type Project = {
   };
   
   
-async function fetchProjects(): Promise<Project[]> {
-    const response = await fetch("https://api.github.com/users/samuele-lolli/repos");
+  async function fetchProjects(): Promise<Project[]> {
+    const response = await fetch("https://api.github.com/users/samuele-lolli/repos", {
+      next: { revalidate: 60 }, // ISR: rigenera i dati ogni 60 secondi
+    });
     if (!response.ok) {
       throw new Error("Failed to fetch projects");
     }
     return response.json();
   }
+  
 
 export default async function Projects() {
     const projects = await fetchProjects();
