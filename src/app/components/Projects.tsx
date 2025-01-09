@@ -31,20 +31,16 @@ export default async function Projects() {
                 {projects.map((project) => (
                     <div
                         key={project.id}
-                        className="relative bg-gradient-to-br from-[#1b263b] via-[#415a77] to-[#0d1b2a] border border-[#e63946] p-6 rounded-lg hover:scale-105 hover:border-[#a8dadc] transition duration-300 shadow-xl flex flex-col justify-between"
+                        className="relative bg-gradient-to-br from-[#415a77] to-[#1b263b] border border-[#e63946] p-6 rounded-lg hover:scale-105 hover:border-[#a8dadc] transition duration-300 shadow-md flex flex-col justify-between"
                     >
-                        {/* Title */}
-                        <h3 className="text-2xl font-bold text-[#e63946] mb-2 text-center">
+                        <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#e63946] to-[#a8dadc] opacity-20 blur"></div>
+                        <h3 className="text-2xl font-bold text-[#e63946] mb-2 text-center z-10">
                             {project.name}
                         </h3>
-
-                        {/* Description */}
-                        <p className="text-[#a8dadc] mb-4 text-sm text-center flex-grow">
+                        <p className="text-[#a8dadc] mb-4 text-sm text-center flex-grow z-10">
                             {project.description || "No description available."}
                         </p>
-
-                        {/* Topics - Tag */}
-                        <div className="flex flex-wrap gap-2 mb-4 justify-center">
+                        <div className="flex flex-wrap gap-2 mb-4 justify-center z-10">
                             {project.topics.map((topic, index) => (
                                 <span
                                     key={index}
@@ -54,13 +50,11 @@ export default async function Projects() {
                                 </span>
                             ))}
                         </div>
-
-                        {/* GitHub Button with Logo */}
                         <a
                             href={project.html_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center px-4 py-2 bg-[#a8dadc] text-[#1b263b] font-semibold rounded-lg hover:bg-[#e63946] hover:text-white transition duration-300 text-center max-w-xs mx-auto"
+                            className="inline-flex items-center justify-center px-4 py-2 bg-[#a8dadc] text-[#1b263b] font-semibold rounded-lg hover:bg-[#e63946] hover:text-white transition duration-300 text-center max-w-xs mx-auto z-10"
                         >
                             <img
                                 src="github.svg"
