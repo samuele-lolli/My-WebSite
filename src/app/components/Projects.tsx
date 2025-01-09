@@ -9,18 +9,19 @@ type Project = {
   
   
   async function fetchProjects(): Promise<Project[]> {
-    const response = await fetch("https://api.github.com/users/samuele-lolli/repos", {
-      next: { revalidate: 60 }, // ISR: rigenera i dati ogni 60 secondi
+    const response: Response = await fetch("https://api.github.com/users/samuele-lolli/repos", {
+      next: { revalidate: 60 }, // ISR
     });
     if (!response.ok) {
       throw new Error("Failed to fetch projects");
     }
-    return response.json();
+    const projects: Project[] = await response.json(); 
+    return projects;
   }
   
 
 export default async function Projects() {
-    const projects = await fetchProjects();
+    const projects: Project[] = await fetchProjects();
     return (
         <section id="projects" className="min-h-screen py-20 px-6 bg-gradient-to-b from-[#415a77] to-[#0d1b2a] mb-0">
             <h2 className="text-4xl font-bold mb-6 text-[#e63946] drop-shadow-md text-center">
