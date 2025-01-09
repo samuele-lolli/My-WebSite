@@ -1,23 +1,20 @@
-import './styles/globals.css';
-import { ReactNode } from 'react';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import "./styles/globals.css";
 
 export const metadata = {
-  title: 'Samuele Lolli | Portfolio',
-  description: 'Portfolio personale di Samuele Lolli',
-  icons: {
-    icon: "/favicon.ico",
-  },
+  title: "Samuele Lolli - Personal Website",
+  description: "Personal website, portfolio and blog.",
 };
 
-type RootLayoutProps = {
-  children: ReactNode;
-};
-
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    
     <html lang="en">
-      <body className="bg-black text-neon">{children}</body>
+      <body className="bg-black text-neon">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
