@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-br from-[#0d1b2a] via-[#1b263b] to-[#415a77] text-white font-sans">
+    <main className="bg-[#0d0d0d] text-[#ffffff] font-sans">
       <Navbar />
       <Hero />
       <Skills />

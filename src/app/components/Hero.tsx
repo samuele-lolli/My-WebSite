@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-[#1b263b] to-[#415a77] px-6">
+        <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d] px-6">
             <div className="relative">
                 <img
                     src="/me.png"
@@ -8,10 +8,10 @@ export default function Hero() {
                     className="w-48 h-48 rounded-full object-cover shadow-lg"
                 />
             </div>
-            <h1 className="text-5xl sm:text-7xl font-bold mb-4 text-[#e63946] drop-shadow-md">
+            <h1 className="text-5xl sm:text-7xl font-bold mb-4 text-[#52b788] drop-shadow-md">
                 Hello, I’m Samuele Lolli
             </h1>
-            <p className="text-xl sm:text-2xl text-[#a8dadc] mb-6 leading-relaxed">
+            <p className="text-xl sm:text-2xl text-[#cccccc] mb-6 leading-relaxed">
                 I am currently studying Computer Science at University of Bologna. Passionate about AI with a strong
                 foundation in programming and problem-solving.
             </p>
@@ -21,7 +21,7 @@ export default function Hero() {
                 <a
                     href="/CV.pdf"
                     download
-                    className="px-6 py-3 bg-[#e63946] text-white font-semibold rounded-lg hover:bg-[#a8dadc] hover:text-[#1b263b] transition duration-300 shadow-md"
+                    className="px-6 py-3 bg-[#52b788] text-white font-semibold rounded-lg hover:bg-[#cccccc] hover:text-[#0d0d0d] transition duration-300 shadow-md"
                 >
                     Download CV
                 </a>
@@ -29,7 +29,7 @@ export default function Hero() {
                     href="https://github.com/samuele-lolli"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 bg-[#e63946] text-white font-semibold rounded-lg hover:bg-[#a8dadc] hover:text-[#1b263b] transition duration-300 shadow-md"
+                    className="px-6 py-3 bg-[#52b788] text-white font-semibold rounded-lg hover:bg-[#cccccc] hover:text-[#0d0d0d] transition duration-300 shadow-md"
                 >
                     GitHub
                 </a>
