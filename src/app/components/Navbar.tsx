@@ -5,11 +5,11 @@ export default function Navbar() {
                 Home
             </a>
             <div className="flex space-x-6">
+                <a href="#about" className="text-[#52b788] hover:text-[#cccccc] transition duration-300">
+                    About
+                </a>
                 <a href="#skills" className="text-[#52b788] hover:text-[#cccccc] transition duration-300">
                     Skills
-                </a>
-                <a href="#certifications" className="text-[#52b788] hover:text-[#cccccc] transition duration-300">
-                    Certifications
                 </a>
                 <a href="#projects" className="text-[#52b788] hover:text-[#cccccc] transition duration-300">
                     Projects

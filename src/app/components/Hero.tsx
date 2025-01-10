@@ -18,8 +18,7 @@ export default function Hero() {
                 Hello, I’m Samuele Lolli
             </h1>
             <p className="text-lg sm:text-2xl text-[#cccccc] mb-6 leading-relaxed">
-                I am currently studying Computer Science at University of Bologna. Passionate about AI with a strong
-                foundation in programming and problem-solving.
+            CS student | AI Enthusiast
             </p>
 
             <div className="flex space-x-4 sm:space-x-6">
