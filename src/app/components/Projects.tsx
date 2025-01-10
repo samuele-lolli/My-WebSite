@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 type Project = {
     id: number;
     name: string;
@@ -9,12 +11,12 @@ type Project = {
 
 async function fetchProjects(): Promise<Project[]> {
     const response: Response = await fetch("https://api.github.com/users/samuele-lolli/repos", {
-      next: { revalidate: 60 }, // ISR
+        next: { revalidate: 600 }, // ISR
     });
     if (!response.ok) {
-      throw new Error("Failed to fetch projects");
+        throw new Error("Failed to fetch projects");
     }
-    const projects: Project[] = await response.json(); 
+    const projects: Project[] = await response.json();
     return projects;
 }
 
@@ -42,7 +44,7 @@ export default async function Projects() {
                             {project.topics.map((topic, index) => (
                                 <span
                                     key={index}
-                                    className="bg-[#cccccc] text-[#0d0d0d] px-3 py-1 rounded-full text-xs font-semibold hover:bg-[#52b788] hover:text-white transition duration-300"
+                                    className="bg-[#0d0d0d] text-[#cccccc] px-3 py-1 rounded-full text-xs font-semibold hover:bg-[#52b788] hover:text-white transition duration-300"
                                 >
                                     {topic}
                                 </span>
@@ -55,9 +57,11 @@ export default async function Projects() {
                                 rel="noopener noreferrer"
                                 className="w-10 h-10 bg-[#52b788] text-white font-semibold rounded-full hover:bg-[#cccccc] hover:text-[#0d0d0d] transition duration-300 flex items-center justify-center"
                             >
-                                <img
-                                    src="github.svg"
+                                <Image
+                                    src="/github.svg"
                                     alt="GitHub"
+                                    width={32}
+                                    height={32}
                                     className="h-5"
                                 />
                             </a>
