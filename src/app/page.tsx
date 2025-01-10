@@ -3,7 +3,6 @@ import Skills from "./components/Skills";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Certifications from "./components/Certifications";
-import Footer from "./components/Footer";
 
 export default function Home() {
   return (

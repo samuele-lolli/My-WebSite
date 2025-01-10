@@ -35,7 +35,7 @@ export default function Certifications() {
                     {certifications.map((cert, index) => (
                         <div
                             key={index}
-                            className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between w-full relative"
+                            className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between w-full relative group"
                         >
                             {/* Data */}
                             <div className="w-full sm:w-5/12 text-center sm:text-right sm:pr-8 mb-4 sm:mb-0">
@@ -43,7 +43,7 @@ export default function Certifications() {
                             </div>
 
                             {/* Timeline marker: visibile solo su desktop */}
-                            <div className="w-8 h-8 bg-[#52b788] rounded-full border-4 border-[#1a1a1a] sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 mb-4 sm:mb-0 mx-auto sm:mx-0 sm:top-1/2 sm:-translate-y-1/2 hidden sm:block"></div>
+                            <div className="w-8 h-8 bg-[#52b788] rounded-full border-4 border-[#1a1a1a] sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 mb-4 sm:mb-0 mx-auto sm:mx-0 sm:top-1/2 sm:-translate-y-1/2 hidden sm:block group-hover:bg-[#cccccc] group-hover:border-[#52b788] transition duration-300"></div>
 
                             {/* Contenuto */}
                             <div className="w-full sm:w-5/12 text-center sm:text-left sm:pl-8">

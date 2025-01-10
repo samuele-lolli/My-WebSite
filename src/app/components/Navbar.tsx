@@ -8,11 +8,11 @@ export default function Navbar() {
                 <a href="#skills" className="text-[#52b788] hover:text-[#cccccc] transition duration-300">
                     Skills
                 </a>
+                <a href="#certifications" className="text-[#52b788] hover:text-[#cccccc] transition duration-300">
+                    Certifications
+                </a>
                 <a href="#projects" className="text-[#52b788] hover:text-[#cccccc] transition duration-300">
                     Projects
-                </a>
-                <a href="#contact" className="text-[#52b788] hover:text-[#cccccc] transition duration-300">
-                    Contact
                 </a>
                 <a href="/blog" className="text-[#52b788] hover:text-[#cccccc] transition duration-300">
                     Blog
