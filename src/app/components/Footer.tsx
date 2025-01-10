@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <footer id="footer" className="py-4 px-6 bg-[#1a1a1a] bg-opacity-90 text-center shadow-inner">
             <p className="text-[#cccccc] mb-4">
-                Feel free to reach out to me through the email below. Let’s connect and discuss exciting opportunities!
+                Feel free to reach out to me through the email below.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-4">
                 <a
