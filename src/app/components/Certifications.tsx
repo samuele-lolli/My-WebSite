@@ -29,13 +29,13 @@ export default function Certifications() {
                 Certifications
             </h2>
             <div className="relative">
-                {/* Linea centrale */}
+                {/* Linea centrale su desktop */}
                 <div className="hidden sm:block border-l-2 border-[#52b788] absolute h-full left-1/2 transform -translate-x-1/2"></div>
                 <div className="space-y-12">
                     {certifications.map((cert, index) => (
                         <div
                             key={index}
-                            className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between w-full relative"
+                            className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between w-full relative"
                         >
                             {/* Data */}
                             <div className="w-full sm:w-5/12 text-center sm:text-right sm:pr-8 mb-4 sm:mb-0">
@@ -43,13 +43,11 @@ export default function Certifications() {
                             </div>
 
                             {/* Timeline marker: visibile solo su desktop */}
-                            <div className="hidden sm:block w-8 h-8 bg-[#52b788] rounded-full border-4 border-[#1a1a1a] sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2"></div>
+                            <div className="w-8 h-8 bg-[#52b788] rounded-full border-4 border-[#1a1a1a] sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 mb-4 sm:mb-0 mx-auto sm:mx-0 sm:top-1/2 sm:-translate-y-1/2 hidden sm:block"></div>
 
                             {/* Contenuto */}
                             <div className="w-full sm:w-5/12 text-center sm:text-left sm:pl-8">
-                                <h3 className="text-xl font-bold text-[#52b788]">
-                                    {cert.title}
-                                </h3>
+                                <h3 className="text-xl font-bold text-[#52b788]">{cert.title}</h3>
                                 <p className="text-sm">{cert.platform}</p>
                                 {cert.link !== "#" && (
                                     <a
