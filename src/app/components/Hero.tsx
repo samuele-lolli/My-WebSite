@@ -21,17 +21,37 @@ export default function Hero() {
                 <a
                     href="/CV.pdf"
                     download
-                    className="px-6 py-3 bg-[#52b788] text-white font-semibold rounded-lg hover:bg-[#cccccc] hover:text-[#0d0d0d] transition duration-300 shadow-md"
+                    className="w-16 h-16 bg-[#52b788] text-white font-semibold rounded-full hover:bg-[#cccccc] hover:text-[#0d0d0d] transition duration-300 shadow-md flex items-center justify-center"
                 >
-                    Download CV
+                    <img
+                        src="/download.svg"
+                        alt="Download CV"
+                        className="h-8"
+                    />
                 </a>
                 <a
                     href="https://github.com/samuele-lolli"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 bg-[#52b788] text-white font-semibold rounded-lg hover:bg-[#cccccc] hover:text-[#0d0d0d] transition duration-300 shadow-md"
+                    className="w-16 h-16 bg-[#52b788] text-white font-semibold rounded-full hover:bg-[#cccccc] hover:text-[#0d0d0d] transition duration-300 shadow-md flex items-center justify-center"
                 >
-                    GitHub
+                    <img
+                        src="/github.svg"
+                        alt="GitHub"
+                        className="h-8"
+                    />
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/samuele-lolli"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-16 h-16 bg-[#52b788] text-white font-semibold rounded-full hover:bg-[#cccccc] hover:text-[#0d0d0d] transition duration-300 shadow-md flex items-center justify-center"
+                >
+                    <img
+                        src="/linkedin.svg"
+                        alt="LinkedIn"
+                        className="h-8"
+                    />
                 </a>
             </div>
         </section>

@@ -48,19 +48,20 @@ export default async function Projects() {
                                 </span>
                             ))}
                         </div>
-                        <a
-                            href={project.html_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center px-4 py-2 bg-[#cccccc] text-[#0d0d0d] font-semibold rounded-lg hover:bg-[#52b788] hover:text-white transition duration-300 text-center max-w-xs mx-auto z-10"
-                        >
-                            <img
-                                src="github.svg"
-                                alt="GitHub"
-                                className="h-5 mr-2"
-                            />
-                            View on GitHub
-                        </a>
+                        <div className="flex justify-center z-10">
+                            <a
+                                href={project.html_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 bg-[#52b788] text-white font-semibold rounded-full hover:bg-[#cccccc] hover:text-[#0d0d0d] transition duration-300 flex items-center justify-center"
+                            >
+                                <img
+                                    src="github.svg"
+                                    alt="GitHub"
+                                    className="h-5"
+                                />
+                            </a>
+                        </div>
                     </div>
                 ))}
             </div>
