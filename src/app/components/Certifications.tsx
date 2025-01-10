@@ -21,20 +21,18 @@ export default function Certifications() {
     ];
 
     return (
-        <section id="certifications" className="py-20 px-6 bg-[#1a1a1a] bg-opacity-90 text-center text-[#cccccc]">
-            <h2 className="text-4xl font-bold mb-6 text-[#52b788] drop-shadow-md">Certifications</h2>
+        <section id="certifications" className="py-16 px-6 bg-[#1a1a1a] bg-opacity-90 text-center text-[#cccccc]">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#52b788] drop-shadow-md">Certifications</h2>
             <div className="relative">
                 <div className="border-l-2 border-[#52b788] absolute h-full left-1/2 transform -translate-x-1/2"></div>
                 <div className="space-y-8">
                     {certifications.map((cert, index) => (
-                        <div key={index} className="relative flex items-center justify-between w-full">
-                            <div className="w-5/12 text-right pr-8">
+                        <div key={index} className="relative flex flex-col sm:flex-row items-center justify-between w-full">
+                            <div className="w-full sm:w-5/12 text-center sm:text-right sm:pr-8 mb-4 sm:mb-0">
                                 <p className="text-lg font-semibold">{cert.date}</p>
                             </div>
-                            <div className="w-2/12 flex justify-center">
-                                <div className="w-8 h-8 bg-[#52b788] rounded-full border-4 border-[#1a1a1a]"></div>
-                            </div>
-                            <div className="w-5/12 text-left pl-8">
+                            <div className="w-8 h-8 bg-[#52b788] rounded-full border-4 border-[#1a1a1a] mb-4 sm:mb-0"></div>
+                            <div className="w-full sm:w-5/12 text-center sm:text-left sm:pl-8">
                                 <h3 className="text-xl font-bold text-[#52b788]">{cert.title}</h3>
                                 <p className="text-sm">{cert.platform}</p>
                                 {cert.link !== "#" && (

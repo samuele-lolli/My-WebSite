@@ -21,8 +21,8 @@ async function fetchProjects(): Promise<Project[]> {
 export default async function Projects() {
     const projects: Project[] = await fetchProjects();
     return (
-        <section id="projects" className="min-h-screen py-20 px-6 bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d] mb-0">
-            <h2 className="text-4xl font-bold mb-6 text-[#52b788] drop-shadow-md text-center">
+        <section id="projects" className="min-h-screen py-16 px-6 bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d] mb-0">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#52b788] drop-shadow-md text-center">
                 Projects
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -32,7 +32,7 @@ export default async function Projects() {
                         className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] border border-[#52b788] p-6 rounded-lg hover:scale-105 hover:border-[#cccccc] transition duration-300 shadow-md flex flex-col justify-between"
                     >
                         <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#52b788] to-[#cccccc] opacity-20 blur"></div>
-                        <h3 className="text-2xl font-bold text-[#52b788] mb-2 text-center z-10">
+                        <h3 className="text-xl sm:text-2xl font-bold text-[#52b788] mb-2 text-center z-10">
                             {project.name}
                         </h3>
                         <p className="text-[#cccccc] mb-4 text-sm text-center flex-grow z-10">
