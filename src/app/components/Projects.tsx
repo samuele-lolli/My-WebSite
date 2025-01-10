@@ -9,19 +9,27 @@ type Project = {
     stargazers_count: number;
 };
 
-async function fetchProjects(): Promise<Project[]> {
+const favoriteProjectNames: String[] = ["Finetuning-Pegasus-Model", "MilkyWay", "Data-Analytics-Techniques", "Satellite-Image-Inpainting", "Steam-Recommendation-System", "My-Website"];
+
+async function fetchFavoriteProjects(): Promise<Project[]> {
     const response: Response = await fetch("https://api.github.com/users/samuele-lolli/repos", {
-        next: { revalidate: 600 }, // ISR
+        next: { revalidate: 6000}, // ISR
     });
     if (!response.ok) {
         throw new Error("Failed to fetch projects");
     }
+
     const projects: Project[] = await response.json();
-    return projects;
+
+    const favoriteProjects = projects.filter(project => 
+        favoriteProjectNames.includes(project.name)
+    );
+
+    return favoriteProjects;
 }
 
 export default async function Projects() {
-    const projects: Project[] = await fetchProjects();
+    const projects: Project[] = await fetchFavoriteProjects();
     return (
         <section id="projects" className="min-h-screen py-16 px-6 bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d] mb-0">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#52b788] drop-shadow-md text-center">
