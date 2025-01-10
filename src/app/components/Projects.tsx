@@ -9,7 +9,7 @@ type Project = {
     stargazers_count: number;
 };
 
-const favoriteProjectNames: String[] = ["Finetuning-Pegasus-Model", "MilkyWay", "Data-Analytics-Techniques", "Satellite-Image-Inpainting", "Steam-Recommendation-System", "My-Website"];
+const favoriteProjectNames: string[] = ["Finetuning-Pegasus-Model", "MilkyWay", "Data-Analytics-Techniques", "Satellite-Image-Inpainting", "Steam-Recommendation-System", "My-Website"];
 
 async function fetchFavoriteProjects(): Promise<Project[]> {
     const response: Response = await fetch("https://api.github.com/users/samuele-lolli/repos", {
