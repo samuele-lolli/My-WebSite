@@ -63,15 +63,16 @@ export default async function Projects() {
                                 href={project.html_url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 bg-[#52b788] text-white font-semibold rounded-full hover:bg-[#cccccc] hover:text-[#0d0d0d] transition duration-300 flex items-center justify-center"
+                                className="inline-flex items-center justify-center px-3 py-1 bg-[#52b788] text-white font-semibold rounded-full hover:bg-[#cccccc] hover:text-[#0d0d0d] transition duration-300 mt-2 text-sm"
                             >
                                 <Image
                                     src="/github.svg"
                                     alt="GitHub"
-                                    width={32}
-                                    height={32}
-                                    className="h-5"
+                                    width={20}
+                                    height={20}
+                                    className="mr-2"
                                 />
+                                View on GitHub
                             </a>
                         </div>
                     </div>
