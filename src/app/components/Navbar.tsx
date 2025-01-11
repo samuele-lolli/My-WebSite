@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Navbar() {
     return (
         <nav className="flex justify-between items-center px-6 py-4 bg-[#1a1a1a] bg-opacity-90 fixed w-full z-10 shadow-md">
@@ -14,9 +16,9 @@ export default function Navbar() {
                 <a href="#projects" className="text-[#52b788] hover:text-[#cccccc] transition duration-300">
                     Projects
                 </a>
-                <a href="/blog" className="text-[#52b788] hover:text-[#cccccc] transition duration-300">
+                <Link href="/blog" className="text-[#52b788] hover:text-[#cccccc] transition duration-300">
                     Blog
-                </a>
+                </Link>
             </div>
         </nav>
     );
