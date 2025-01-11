@@ -3,6 +3,13 @@ import path from "path";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 
+// Specifica il tipo per il parametro slug
+interface PostPageProps {
+  params: {
+    slug: string;
+  };
+}
+
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "posts");
   const filenames = fs.readdirSync(postsDirectory);
@@ -11,7 +18,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function PostPage({ params }: { params: { slug: string } }) {
+export default function PostPage({ params }: PostPageProps) {
   const { slug } = params;
   const filePath = path.join(process.cwd(), "posts", `${slug}.md`);
 
