@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 
-// Specifica il tipo per il parametro slug
+// Modifica il tipo per i parametri dinamici (deve essere compatibile con Next.js 15.1)
 interface PostPageProps {
   params: {
     slug: string;
@@ -18,8 +18,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function PostPage({ params }: PostPageProps) {
+export default async function PostPage({ params }: PostPageProps) {
   const { slug } = params;
+
+  // Verifica se il file esiste
   const filePath = path.join(process.cwd(), "posts", `${slug}.md`);
 
   if (!fs.existsSync(filePath)) {
