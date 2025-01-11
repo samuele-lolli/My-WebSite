@@ -1,15 +1,31 @@
-export default function Blog() {
-    return (
-      <main className="bg-gradient-to-br from-[#0d1b2a] via-[#1b263b] to-[#415a77] text-white font-sans">
-        <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-[#1b263b] to-[#415a77] px-6">
-          <h1 className="text-5xl sm:text-7xl font-bold mb-4 text-[#e63946] drop-shadow-md">
-            Blog
-          </h1>
-          <p className="text-xl sm:text-2xl text-[#a8dadc] mb-6 leading-relaxed">
-           Work in progress...
-          </p>
-        </section>
-  
-      </main>
-    );
-  }
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import Link from "next/link";
+
+export default function BlogPage() {
+  const postsDirectory = path.join(process.cwd(), "posts");
+  const filenames = fs.readdirSync(postsDirectory);
+
+  const posts = filenames.map((filename) => {
+    const filePath = path.join(postsDirectory, filename);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const { data } = matter(fileContents);
+    return {
+      title: data.title,
+      date: data.date,
+      slug: filename.replace(".md", ""),
+    };
+  });
+
+  return (
+    <div>
+      <h1>Blog</h1>
+      {posts.map((post) => (
+        <Link key={post.slug} href={`/blog/${post.slug}`}>
+          <h2>{post.title}</h2>
+        </Link>
+      ))}
+    </div>
+  );
+}
