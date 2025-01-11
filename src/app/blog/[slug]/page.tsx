@@ -3,12 +3,6 @@ import path from "path";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "posts");
   const filenames = fs.readdirSync(postsDirectory);
@@ -17,7 +11,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function PostPage({ params }: Awaited<PageProps>) {
+export default async function PostPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
   // Verifica se il file esiste
