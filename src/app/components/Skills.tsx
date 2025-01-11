@@ -4,7 +4,7 @@ export default function Skills() {
     const certifications = [
         {
             title: "Blockchain Specialization",
-            platform: "University at Buffalo - Coursera",
+            platform: "Buffalo University - Coursera",
             link: "/blockchain.pdf",
             date: "July 28, 2022",
         },
@@ -26,7 +26,7 @@ export default function Skills() {
         <section id="skills" className="py-16 px-4 sm:px-6 bg-[#1a1a1a] bg-opacity-90 text-center text-[#cccccc]">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#52b788] drop-shadow-md">Skills & Certifications</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] border border-[#52b788] p-2 rounded-lg hover:scale-105 hover:border-[#cccccc] transition duration-300 shadow-md flex flex-col items-center">
+                <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] border border-[#52b788] p-2 rounded-lg transition duration-300 shadow-md flex flex-col items-center hover:shadow-[0_0_15px_5px_rgba(82,183,136,0.5)]">
                     <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#52b788] to-[#cccccc] opacity-20 blur"></div>
                     <h3 className="text-lg font-bold text-[#52b788] mb-2 z-10">Languages</h3>
                     <div className="flex flex-wrap items-center justify-center space-x-4">
@@ -42,14 +42,14 @@ export default function Skills() {
                                     alt={`${skill.name} logo`}
                                     width={48}
                                     height={48}
-                                    className="h-8 sm:h-10 mb-2 z-10"
+                                    className="h-8 sm:h-10 mb-2 z-10 hover:scale-110 hover:rotate-3 transition duration-300"
                                 />
                                 <span className="text-xs sm:text-sm font-semibold z-10">{skill.name}</span>
                             </div>
                         ))}
                     </div>
                 </div>
-                <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] border border-[#52b788] p-2 rounded-lg hover:scale-105 hover:border-[#cccccc] transition duration-300 shadow-md flex flex-col items-center">
+                <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] border border-[#52b788] p-2 rounded-lg transition duration-300 shadow-md flex flex-col items-center hover:shadow-[0_0_15px_5px_rgba(82,183,136,0.5)]">
                     <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#52b788] to-[#cccccc] opacity-20 blur"></div>
                     <h3 className="text-lg font-bold text-[#52b788] mb-2 z-10">Data Engineering & Machine Learning</h3>
                     <div className="flex flex-wrap items-center justify-center space-x-4">
@@ -67,14 +67,14 @@ export default function Skills() {
                                     alt={`${skill.name} logo`}
                                     width={48}
                                     height={48}
-                                    className="h-8 sm:h-10 mb-2 z-10"
+                                    className="h-8 sm:h-10 mb-2 z-10 hover:scale-110 hover:rotate-3 transition duration-300"
                                 />
                                 <span className="text-xs sm:text-sm font-semibold z-10">{skill.name}</span>
                             </div>
                         ))}
                     </div>
                 </div>
-                <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] border border-[#52b788] p-2 rounded-lg hover:scale-105 hover:border-[#cccccc] transition duration-300 shadow-md flex flex-col items-center">
+                <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] border border-[#52b788] p-2 rounded-lg transition duration-300 shadow-md flex flex-col items-center hover:shadow-[0_0_15px_5px_rgba(82,183,136,0.5)]">
                     <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#52b788] to-[#cccccc] opacity-20 blur"></div>
                     <h3 className="text-lg font-bold text-[#52b788] mb-2 z-10">Web Development</h3>
                     <div className="flex flex-wrap items-center justify-center space-x-4">
@@ -89,14 +89,14 @@ export default function Skills() {
                                     alt={`${skill.name} logo`}
                                     width={48}
                                     height={48}
-                                    className="h-8 sm:h-10 mb-2 z-10"
+                                    className="h-8 sm:h-10 mb-2 z-10 hover:scale-110 hover:rotate-3 transition duration-300"
                                 />
                                 <span className="text-xs sm:text-sm font-semibold z-10">{skill.name}</span>
                             </div>
                         ))}
                     </div>
                 </div>
-                <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] border border-[#52b788] p-2 rounded-lg hover:scale-105 hover:border-[#cccccc] transition duration-300 shadow-md flex flex-col items-center">
+                <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] border border-[#52b788] p-2 rounded-lg transition duration-300 shadow-md flex flex-col items-center hover:shadow-[0_0_15px_5px_rgba(82,183,136,0.5)]">
                     <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#52b788] to-[#cccccc] opacity-20 blur"></div>
                     <h3 className="text-lg font-bold text-[#52b788] mb-2 z-10">Other Tools</h3>
                     <div className="flex flex-wrap items-center justify-center space-x-4">
@@ -110,7 +110,7 @@ export default function Skills() {
                                     alt={`${skill.name} logo`}
                                     width={48}
                                     height={48}
-                                    className="h-8 sm:h-10 mb-2 z-10"
+                                    className="h-8 sm:h-10 mb-2 z-10 hover:scale-110 hover:rotate-3 transition duration-300"
                                 />
                                 <span className="text-xs sm:text-sm font-semibold z-10">{skill.name}</span>
                             </div>
