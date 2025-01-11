@@ -3,7 +3,6 @@ import path from "path";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 
-// Modifica il tipo per i parametri dinamici (deve essere compatibile con Next.js 15.1)
 interface PostPageProps {
   params: {
     slug: string;
@@ -18,7 +17,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function PostPage({ params }: PostPageProps) {
+export default async function PostPage({ params }: Awaited<PostPageProps>) {
   const { slug } = params;
 
   // Verifica se il file esiste
