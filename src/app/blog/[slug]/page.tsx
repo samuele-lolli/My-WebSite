@@ -4,20 +4,23 @@ import { client } from "@/sanity/client";
 import Link from "next/link";
 import Image from "next/image";
 
+// Definizione dell'interfaccia per un post
 interface Post {
     _id: string;
     title: string;
-    body: PortableTextBlock[];
+    body: PortableTextBlock[]; // Cambiato da any a PortableTextBlock[]
     mainImage: { asset: { _ref: string } };
     publishedAt: string;
     slug: { current: string };
 }
 
+// Definizione di un blocco di testo per il corpo del post (PortableTextBlock)
 interface PortableTextBlock {
     _type: string;
-    [key: string]: any;
+    [key: string]: any; // Qui si può mantenere una certa flessibilità, ma puoi definire meglio i possibili tipi se conosci i tipi specifici.
 }
 
+// Tipizzazione per il codice incorporato
 interface CodeValue {
     code: string;
     language: string;
@@ -80,6 +83,7 @@ const portableTextComponents: PortableTextComponents = {
     },
 };
 
+// La pagina del post
 export default async function PostPage({ params }: { params: { slug: string } }) {
     const { slug } = await params;
     const post = await client.fetch<Post>(
