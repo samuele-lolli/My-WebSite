@@ -14,7 +14,7 @@ const urlFor = (source: SanityImageSource) =>
     ? imageUrlBuilder({ projectId, dataset }).image(source)
     : null;
 
-export const revalidate = 900; // ISR
+export const revalidate = 10; // ISR
 
 interface ImageValue {
   asset: {
