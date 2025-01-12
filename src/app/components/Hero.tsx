@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Hero() {
     return (
-        <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d] px-6">
+        <section className="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d] px-6">
             <div className="relative">
                 <Image
                     src="/me.png"
