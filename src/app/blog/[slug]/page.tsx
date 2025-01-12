@@ -7,10 +7,15 @@ import Image from "next/image";
 interface Post {
     _id: string;
     title: string;
-    body: any;
+    body: PortableTextBlock[];
     mainImage: { asset: { _ref: string } };
     publishedAt: string;
     slug: { current: string };
+}
+
+interface PortableTextBlock {
+    _type: string;
+    [key: string]: any;
 }
 
 interface CodeValue {
@@ -86,7 +91,6 @@ export default async function PostPage({ params }: { params: { slug: string } })
 
     const postImageUrl = post.mainImage ? urlFor(post.mainImage)?.width(800).height(450).url() : null;
 
-    // Configura la rigenerazione incrementale per questa pagina
     return (
         <main className="container mx-auto min-h-screen max-w-5xl p-8 flex flex-col gap-4 text-center">
             <div className="text-left">
