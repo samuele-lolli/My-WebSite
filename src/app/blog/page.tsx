@@ -16,7 +16,7 @@ const urlFor = (source: SanityImageSource) =>
     : null;
 
 export const revalidate = 10; // ISR
-export const dynamicParams = true
+
 
 export default async function BlogPage() {
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {});
