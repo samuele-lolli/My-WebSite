@@ -15,7 +15,7 @@ const urlFor = (source: SanityImageSource) =>
     : null;
 
 export const revalidate = 10; // ISR
-export const dynamicParams = true
+export const dynamicParams = false
 
 interface ImageValue {
   asset: {
