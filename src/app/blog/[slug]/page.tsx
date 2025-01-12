@@ -14,7 +14,7 @@ const urlFor = (source: SanityImageSource) =>
     ? imageUrlBuilder({ projectId, dataset }).image(source)
     : null;
 
-export const revalidate = 30; // ISR: Revalidazione ogni 30 secondi
+export const revalidate = 900; // ISR
 
 interface ImageValue {
   asset: {
