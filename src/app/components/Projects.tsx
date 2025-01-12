@@ -1,20 +1,12 @@
 import Image from 'next/image';
-
-type Project = {
-    id: number;
-    name: string;
-    description: string;
-    html_url: string;
-    topics: string[];
-    stargazers_count: number;
-};
+import { Project } from '../utils/types';
 
 const favoriteProjectNames: string[] = ["Finetuning-Pegasus-Model", "MilkyWay", "Data-Analytics-Techniques", "Satellite-Image-Inpainting", "Steam-Recommendation-System", "My-Website"];
 
+export const revalidate = 900; // ISR
+
 async function fetchFavoriteProjects(): Promise<Project[]> {
-    const response: Response = await fetch("https://api.github.com/users/samuele-lolli/repos", {
-        next: { revalidate: 6000}, // ISR
-    });
+    const response: Response = await fetch("https://api.github.com/users/samuele-lolli/repos");
     if (!response.ok) {
         throw new Error("Failed to fetch projects");
     }

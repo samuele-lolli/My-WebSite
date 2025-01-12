@@ -1,22 +1,13 @@
 import Link from "next/link";
 import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
-import imageUrlBuilder from "@sanity/image-url";
-import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 const POSTS_QUERY = `*[
   _type == "post"
   && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, description, shortDescription, mainImage}`;
+]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, description, shortDescription}`;
 
-const { projectId, dataset } = client.config();
-const urlFor = (source: SanityImageSource) =>
-  projectId && dataset
-    ? imageUrlBuilder({ projectId, dataset }).image(source)
-    : null;
-
-export const revalidate = 10; // ISR
-
+export const revalidate = 900; // ISR
 
 export default async function BlogPage() {
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {});
@@ -40,13 +31,6 @@ export default async function BlogPage() {
           >
             <Link href={`/blog/${post.slug.current}`}>
               <div className="p-6">
-                {post.mainImage && (
-                  <img
-                    src={urlFor(post.mainImage)?.width(400).height(200).url()}
-                    alt={post.title}
-                    className="w-full h-48 object-cover mb-4 rounded"
-                  />
-                )}
                 <h2 className="text-2xl font-semibold text-[#52b788] hover:underline mb-2">
                   {post.title}
                 </h2>
