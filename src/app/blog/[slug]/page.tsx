@@ -1,3 +1,4 @@
+// src/app/blog/[slug]/page.tsx
 import { PortableText, type PortableTextComponents } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/sanity/client";
@@ -13,7 +14,7 @@ const urlFor = (source: SanityImageSource) =>
     ? imageUrlBuilder({ projectId, dataset }).image(source)
     : null;
 
-export const revalidate = 30; // ISR
+export const revalidate = 30; // ISR: Revalidazione ogni 30 secondi
 
 interface ImageValue {
   asset: {
@@ -86,9 +87,9 @@ export async function generateStaticParams() {
 export default async function PostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>; // Tipizzazione corretta della promessa
 }) {
-  const { slug } = await params;
+  const { slug } = await params; // `await` per ottenere il valore da `params`
 
   const post: Post = await client.fetch(POST_QUERY, { slug });
   const postImageUrl = post.mainImage
