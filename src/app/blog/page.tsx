@@ -28,7 +28,7 @@ export default async function BlogPage() {
         </Link>
       </div>
       <header className="text-center mb-12">
-        <h1 className="text-5xl font-bold mb-4 text-[#52b788]">Samuele Lolli's Blog</h1>
+        <h1 className="text-5xl font-bold mb-4 text-[#52b788]">Samuele Lolli&apos;s Blog</h1>
         <p className="text-xl text-gray-400">I talk about AI, Software, and Life. I also try to improve my English.</p>
       </header>
       <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-center">

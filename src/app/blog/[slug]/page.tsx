@@ -15,25 +15,41 @@ const urlFor = (source: SanityImageSource) =>
 
 const options = { next: { revalidate: 30 } };
 
+interface ImageValue {
+  asset: {
+    _ref: string;
+  };
+  alt?: string;
+}
+
+interface CodeValue {
+  code: string;
+  language: string;
+}
+
+interface VideoValue {
+  url: string;
+  title: string;
+}
+
 const portableTextComponents: PortableTextComponents = {
   types: {
-    image: ({ value }: any) => (
+    image: ({ value }: { value: ImageValue }) => (
       <div className="relative w-full h-64 my-6 mx-auto">
         <Image
           src={urlFor(value)?.width(600).height(338).url() || ""}
           alt={value.alt || "Image"}
-          layout="fill"
-          objectFit="contain"
-          className="rounded-lg"
+          fill
+          className="rounded-lg object-contain"
         />
       </div>
     ),
-    code: ({ value }: any) => (
+    code: ({ value }: { value: CodeValue }) => (
       <pre className="bg-gray-800 text-green-300 p-4 rounded-lg overflow-x-auto my-6 text-left">
         <code className="language-{value.language}">{value.code}</code>
       </pre>
     ),
-    video: ({ value }: { value: { url: string; title: string } }) => (
+    video: ({ value }: { value: VideoValue }) => (
       <div className="my-6">
         <p className="text-gray-300 text-sm mb-2">{value.title}</p>
         <iframe
@@ -70,9 +86,8 @@ export default async function PostPage({
           <Image
             src={postImageUrl}
             alt={post.title}
-            layout="fill"
-            objectFit="contain"
-            className="rounded-xl"
+            fill
+            className="rounded-xl object-contain"
           />
         </div>
       )}
