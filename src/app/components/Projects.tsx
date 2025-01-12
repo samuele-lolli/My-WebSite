@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Project } from '../utils/types';
+import { Project } from '../interfaces';
 
 const favoriteProjectNames: string[] = ["Finetuning-Pegasus-Model", "MilkyWay", "Data-Analytics-Techniques", "Satellite-Image-Inpainting", "Steam-Recommendation-System", "My-Website"];
 
