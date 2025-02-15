@@ -1,4 +1,4 @@
-import { type PortableTextComponents, PortableTextMarkComponentProps } from "next-sanity";
+import { type PortableTextComponents } from "next-sanity";
 import { CodeValue, ImageValue, VideoValue } from "../interfaces";
 import Image from "next/image";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
