@@ -7,7 +7,7 @@ const POSTS_QUERY = `*[
   && defined(slug)
 ]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, shortDescription}`;
 
-export const revalidate = 900; // ISR
+export const revalidate = 30; // ISR
 
 export default async function BlogPage() {
   const posts: SanityDocument[] = await client.fetch<SanityDocument[]>(POSTS_QUERY);

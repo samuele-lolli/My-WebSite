@@ -6,7 +6,7 @@ import { portableTextComponents } from "@/app/components/FromSanityToReact";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`;
 
-export const revalidate = 900; // ISR
+export const revalidate = 30; // ISR
 export const dynamicParams = true //SSR if a request comes in for a path that hasn't been generated
 
 export async function generateStaticParams() {
@@ -24,7 +24,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const post: Post = await client.fetch<Post>(POST_QUERY, { slug });
 
   return (
-    <main className="container mx-auto min-h-screen max-w-5xl p-4 sm:p-8 flex flex-col gap-4 text-center overflow-hidden">
+    <main className="container mx-auto min-h-screen max-w-5xl p-4 sm:p-8 flex flex-col gap-4 overflow-hidden">
       <div className="text-left">
         <Link href="/blog" className="hover:underline text-[#52b788]">
           ← Back to posts
