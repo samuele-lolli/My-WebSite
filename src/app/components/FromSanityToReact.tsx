@@ -53,8 +53,8 @@ export const portableTextComponents: PortableTextComponents = {
     h3: ({ children }) => <h3 className="text-2xl font-bold my-4">{children}</h3>,
     h4: ({ children }) => <h4 className="text-xl font-bold my-4">{children}</h4>,
     normal: ({ children }) => <p className="text-lg my-2">{children}</p>,
-    ul: ({ children }) => <ul className="list-disc list-inside my-4">{children}</ul>,
-    ol: ({ children }) => <ol className="list-decimal list-inside my-4">{children}</ol>,
+    ul: ({ children }) => <ul className="list-disc list-inside my-4 text-lg">{children}</ul>,
+    ol: ({ children }) => <ol className="list-decimal list-inside my-4 text-lg">{children}</ol>,
     li: ({ children }) => <li className="ml-4">{children}</li>,
-    },
+  },
 };
