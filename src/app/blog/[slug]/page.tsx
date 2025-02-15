@@ -30,9 +30,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           ← Back to posts
         </Link>
       </div>
-      <h1 className="text-3xl sm:text-5xl font-bold mb-4 text-[#52b788]">{post.title}</h1>
+      <h1 className="text-3xl sm:text-5xl font-bold mb-4 text-[#52b788] text-center">{post.title}</h1>
       <p className="text-gray-400 mb-4 italic">
-        Published: {new Date(post.publishedAt).toLocaleDateString()}
+        Published: {new Date(post.publishedAt).toLocaleDateString('it-IT')}
       </p>
       <div className="prose prose-sm sm:prose-lg text-gray-300 mx-auto max-w-full break-words">
         {Array.isArray(post.body) && (
